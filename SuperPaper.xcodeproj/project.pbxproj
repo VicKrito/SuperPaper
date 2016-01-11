@@ -39,6 +39,7 @@
 		04FFFE1F1C4146EC00ECCA1C /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FFFE1E1C4146EC00ECCA1C /* BaseView.m */; };
 		04FFFE251C414C6B00ECCA1C /* NormalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FFFE241C414C6B00ECCA1C /* NormalWebViewController.m */; };
 		04FFFE281C414CB000ECCA1C /* NormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FFFE271C414CB000ECCA1C /* NormalTableViewCell.m */; };
+		583AA31C1C4400C300F0FFA2 /* libPushSDK-1.8.8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 583AA31B1C4400C300F0FFA2 /* libPushSDK-1.8.8.a */; };
 		7F60BF1F1C423F5100F2DF8F /* SDWebImage in Resources */ = {isa = PBXBuildFile; fileRef = 7F60BF1E1C423F5100F2DF8F /* SDWebImage */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,8 @@
 		04FFFE241C414C6B00ECCA1C /* NormalWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NormalWebViewController.m; path = WebView/NormalWebViewController.m; sourceTree = "<group>"; };
 		04FFFE261C414CB000ECCA1C /* NormalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NormalTableViewCell.h; path = CommonView/NormalTableViewCell.h; sourceTree = "<group>"; };
 		04FFFE271C414CB000ECCA1C /* NormalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NormalTableViewCell.m; path = CommonView/NormalTableViewCell.m; sourceTree = "<group>"; };
+		583AA31B1C4400C300F0FFA2 /* libPushSDK-1.8.8.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPushSDK-1.8.8.a"; path = "ThirdParty/libPushSDK-1.8.8.a"; sourceTree = "<group>"; };
+		583AA31D1C4400D400F0FFA2 /* APService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APService.h; path = Common/APService.h; sourceTree = "<group>"; };
 		7F60BF1E1C423F5100F2DF8F /* SDWebImage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SDWebImage; path = ThirdParty/SDWebImage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +113,7 @@
 				04C3B8301C43D5F1009D48E4 /* CoreTelephony.framework in Frameworks */,
 				04C3B82E1C43D5E2009D48E4 /* CoreFoundation.framework in Frameworks */,
 				04C3B82C1C43D5D0009D48E4 /* CFNetwork.framework in Frameworks */,
+				583AA31C1C4400C300F0FFA2 /* libPushSDK-1.8.8.a in Frameworks */,
 				04C3B82A1C43D5B4009D48E4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +249,7 @@
 		04FFFDEC1C40F7BC00ECCA1C /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				583AA31D1C4400D400F0FFA2 /* APService.h */,
 				04FFFE081C4122E200ECCA1C /* UserSession.h */,
 				04FFFE091C4122E200ECCA1C /* UserSession.m */,
 				0401D4E41C42912D002E2F12 /* SPGlobal.h */,
@@ -264,6 +269,7 @@
 		04FFFDEE1C40F7DD00ECCA1C /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				583AA31B1C4400C300F0FFA2 /* libPushSDK-1.8.8.a */,
 				7F60BF1E1C423F5100F2DF8F /* SDWebImage */,
 				0401D4D81C41E12D002E2F12 /* Apple */,
 			);
@@ -537,6 +543,10 @@
 				INFOPLIST_FILE = SuperPaper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThirdParty",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharetechnology.SuperPaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -552,6 +562,10 @@
 				INFOPLIST_FILE = SuperPaper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThirdParty",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharetechnology.SuperPaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
