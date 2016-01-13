@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0401D4D91C41E12D002E2F12 /* Apple in Resources */ = {isa = PBXBuildFile; fileRef = 0401D4D81C41E12D002E2F12 /* Apple */; };
 		0401D4DC1C41E1E3002E2F12 /* AppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401D4DB1C41E1E3002E2F12 /* AppInfo.m */; };
 		0401D4E01C4237AC002E2F12 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401D4DF1C4237AC002E2F12 /* RegisterViewController.m */; };
 		0401D4E31C423BFE002E2F12 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0401D4E21C423BFE002E2F12 /* AboutUsViewController.m */; };
@@ -63,7 +62,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0401D4D81C41E12D002E2F12 /* Apple */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Apple; path = ThirdParty/Apple; sourceTree = "<group>"; };
 		0401D4DA1C41E1E3002E2F12 /* AppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppInfo.h; path = Utils/AppInfo.h; sourceTree = "<group>"; };
 		0401D4DB1C41E1E3002E2F12 /* AppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppInfo.m; path = Utils/AppInfo.m; sourceTree = "<group>"; };
 		0401D4DE1C4237AC002E2F12 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Login/RegisterViewController.h; sourceTree = "<group>"; };
@@ -227,6 +225,7 @@
 				04FFFDD01C40F63D00ECCA1C /* AppDelegate.m */,
 				04FFFDD21C40F63D00ECCA1C /* ViewController.h */,
 				04FFFDD31C40F63D00ECCA1C /* ViewController.m */,
+				84C138871C46200A00284087 /* SuperPaper.pch */,
 				04FFFDD51C40F63D00ECCA1C /* Main.storyboard */,
 				04FFFDDB1C40F63D00ECCA1C /* Assets.xcassets */,
 				04FFFDDD1C40F63D00ECCA1C /* LaunchScreen.storyboard */,
@@ -270,6 +269,10 @@
 			children = (
 				04FFFDF71C410B1000ECCA1C /* StudyViewController.h */,
 				04FFFDF81C410B1000ECCA1C /* StudyViewController.m */,
+				F6B69EFB1C462E0500CBFEB3 /* PublicationSearchTableViewCell.h */,
+				F6B69EFC1C462E0500CBFEB3 /* PublicationSearchTableViewCell.m */,
+				F6B69EFD1C462E0500CBFEB3 /* PublicationSearchViewController.h */,
+				F6B69EFE1C462E0500CBFEB3 /* PublicationSearchViewController.m */,
 			);
 			name = Study;
 			sourceTree = "<group>";
@@ -540,12 +543,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F60BF1F1C423F5100F2DF8F /* SDWebImage in Resources */,
 				04FFFDDF1C40F63D00ECCA1C /* LaunchScreen.storyboard in Resources */,
 				58483CB41C46674900C03482 /* MJRefresh.bundle in Resources */,
 				04FFFDDC1C40F63D00ECCA1C /* Assets.xcassets in Resources */,
 				04FFFDD71C40F63D00ECCA1C /* Main.storyboard in Resources */,
-				0401D4D91C41E12D002E2F12 /* Apple in Resources */,
 				04FFFE1C1C412F8C00ECCA1C /* Resources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -557,17 +558,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C1396B1C4628DB00284087 /* UIButton+WebCache.m in Sources */,
+				84C139371C4628A800284087 /* UIButton+AFNetworking.m in Sources */,
+				84C1391B1C4628A300284087 /* AFURLRequestSerialization.m in Sources */,
 				04FFFDFF1C410C2900ECCA1C /* UserViewController.m in Sources */,
 				58483CB31C46674900C03482 /* MJRefreshStateHeader.m in Sources */,
 				04FFFDD41C40F63D00ECCA1C /* ViewController.m in Sources */,
+				84C1396F1C4628DB00284087 /* UIImageView+HighlightedWebCache.m in Sources */,
+				84C139391C4628A800284087 /* UIProgressView+AFNetworking.m in Sources */,
+				84C139631C4628DB00284087 /* NSData+ImageContentType.m in Sources */,
+				84C139361C4628A800284087 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				04FFFE251C414C6B00ECCA1C /* NormalWebViewController.m in Sources */,
 				58483CB11C46674900C03482 /* MJRefreshGifHeader.m in Sources */,
 				58483CAF1C46674900C03482 /* MJRefreshBackNormalFooter.m in Sources */,
 				58483CAA1C46674900C03482 /* MJRefreshHeader.m in Sources */,
 				0401D4DC1C41E1E3002E2F12 /* AppInfo.m in Sources */,
+				84C1391D1C4628A300284087 /* AFURLSessionManager.m in Sources */,
 				04FFFDD11C40F63D00ECCA1C /* AppDelegate.m in Sources */,
+				84C139651C4628DB00284087 /* SDWebImageCompat.m in Sources */,
+				84C139691C4628DB00284087 /* SDWebImageManager.m in Sources */,
 				04FFFE281C414CB000ECCA1C /* NormalTableViewCell.m in Sources */,
+				84C139641C4628DB00284087 /* SDImageCache.m in Sources */,
 				04FFFDF61C410A6200ECCA1C /* LoginViewController.m in Sources */,
+				84C139661C4628DB00284087 /* SDWebImageDecoder.m in Sources */,
 				04FFFDFC1C410BB900ECCA1C /* PapersViewController.m in Sources */,
 				58483CB81C46674900C03482 /* UIView+MJExtension.m in Sources */,
 				58483CA81C46674900C03482 /* MJRefreshComponent.m in Sources */,
@@ -575,6 +588,7 @@
 				58483CAC1C46674900C03482 /* MJRefreshAutoNormalFooter.m in Sources */,
 				04FFFDF31C410A2500ECCA1C /* HomeViewController.m in Sources */,
 				04FFFE191C4123F100ECCA1C /* TabBarItem.m in Sources */,
+				84C1396D1C4628DB00284087 /* UIImage+MultiFormat.m in Sources */,
 				0401D4E31C423BFE002E2F12 /* AboutUsViewController.m in Sources */,
 				58483CAE1C46674900C03482 /* MJRefreshBackGifFooter.m in Sources */,
 				58483CB21C46674900C03482 /* MJRefreshNormalHeader.m in Sources */,
@@ -584,6 +598,10 @@
 				04FFFE0A1C4122E200ECCA1C /* UserSession.m in Sources */,
 				58483CB01C46674900C03482 /* MJRefreshBackStateFooter.m in Sources */,
 				04FFFDCE1C40F63D00ECCA1C /* main.m in Sources */,
+				84C139351C4628A800284087 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				84C139181C4628A300284087 /* AFHTTPSessionManager.m in Sources */,
+				84C139711C4628DB00284087 /* UIView+WebCacheOperation.m in Sources */,
+				84C1396A1C4628DB00284087 /* SDWebImagePrefetcher.m in Sources */,
 				04FFFE151C4123F100ECCA1C /* BaseViewController.m in Sources */,
 				58483CB61C46674900C03482 /* UIScrollView+MJExtension.m in Sources */,
 				58483CB71C46674900C03482 /* UIScrollView+MJRefresh.m in Sources */,
@@ -593,6 +611,9 @@
 				58483CA71C46674900C03482 /* MJRefreshBackFooter.m in Sources */,
 				04FFFE161C4123F100ECCA1C /* MainViewController.m in Sources */,
 				04FFFE171C4123F100ECCA1C /* NavigationController.m in Sources */,
+				84C139621C4628DB00284087 /* MKAnnotationView+WebCache.m in Sources */,
+				84C1391A1C4628A300284087 /* AFSecurityPolicy.m in Sources */,
+				84C139681C4628DB00284087 /* SDWebImageDownloaderOperation.m in Sources */,
 				04FFFE031C41205900ECCA1C /* JobsViewController.m in Sources */,
 				58483CA91C46674900C03482 /* MJRefreshFooter.m in Sources */,
 				04FFFDF91C410B1000ECCA1C /* StudyViewController.m in Sources */,
@@ -640,6 +661,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -662,6 +684,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "408e0298-372f-4fc7-86c8-036bf6436858";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -684,6 +707,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -699,6 +723,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "408e0298-372f-4fc7-86c8-036bf6436858";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -711,6 +736,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SuperPaper/SuperPaper.pch";
 				INFOPLIST_FILE = SuperPaper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -720,7 +746,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharetechnology.SuperPaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "408e0298-372f-4fc7-86c8-036bf6436858";
 			};
 			name = Debug;
 		};
@@ -730,6 +756,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SuperPaper/SuperPaper.pch";
 				INFOPLIST_FILE = SuperPaper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -739,7 +766,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharetechnology.SuperPaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "408e0298-372f-4fc7-86c8-036bf6436858";
 			};
 			name = Release;
 		};

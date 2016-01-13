@@ -159,6 +159,14 @@
     [self setSelectedButtonType:self.tabBarDisplayType];
     
     [self resetSelectedButton:_selectIndex];
+    
+    
+    if (![self.delegate conformsToProtocol:@protocol(TabBarDelegate)]) return;
+    
+    if (![self.delegate respondsToSelector:@selector(TabBarDisplayType:didSelectAtIndex:)]) return;
+    
+    [self.delegate TabBarDisplayType:_selType
+                    didSelectAtIndex:(selectIndex)];
 }
 
 - (void)resetSelectedButton:(NSUInteger)selectIndex {

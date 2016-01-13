@@ -56,6 +56,13 @@
  *  当前页面索引
  */
 @property (assign, nonatomic) NSUInteger pageIndex;
+
+/**
+ *  User UIBarButtonItem
+ */
+@property (nonatomic,strong) UIBarButtonItem *normalBarButtonItem;
+@property (nonatomic,strong) UIBarButtonItem *settingBarButtonItem;
+
 @end
 
 @implementation MainViewController
@@ -86,9 +93,14 @@
     [self.view addSubview:self.homeController.view];
     [self.homeController didMoveToParentViewController:self];
     self.currentController = self.homeController;
+    
+    self.navigationItem.rightBarButtonItem = self.normalBarButtonItem;
 }
 
-
+- (void)userAction:(UIButton *)button
+{
+    self.tabbar.selectIndex = self.tabbar.tabBarDisplayType == TabBarDisplayTypeTeacher ? 3 : 4;
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     
@@ -163,6 +175,13 @@
 
         return;
     }
+    
+    if (destinationController == self.userController)
+    {
+        self.navigationItem.rightBarButtonItem = self.settingBarButtonItem;
+    }else{
+        self.navigationItem.rightBarButtonItem = self.normalBarButtonItem;
+    }
 
     self.title = destinationController.titleName;
     [self.currentController viewWillDisappear:YES];
@@ -183,7 +202,10 @@
 
 
 #pragma mark -  event response
-
+- (void)settingButtonAction:(UIBarButtonItem *)button
+{
+    NSLog(@"%s 设置按钮",__FUNCTION__);
+}
 
 #pragma mark -  lazying - getter and setter
 
@@ -245,6 +267,39 @@
     }
     
     return _userController;
+}
+
+- (UIBarButtonItem *)normalBarButtonItem
+{
+    if (!_normalBarButtonItem)
+    {
+        
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];
+        btn.clipsToBounds = YES;
+        NSString *bundleStr = [[NSBundle mainBundle] pathForResource:@"Resources"
+                                                              ofType:@"bundle"];
+        UIImage *iamge = [UIImage imageNamed:[[NSBundle bundleWithPath:bundleStr] pathForResource:@"userImage" ofType:@"png" inDirectory:@"navi"]];
+        [btn setBackgroundImage:iamge forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(userAction:) forControlEvents:UIControlEventTouchUpInside];
+        _normalBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    }
+    
+    return _normalBarButtonItem;
+}
+
+- (UIBarButtonItem *)settingBarButtonItem
+{
+    if (!_settingBarButtonItem)
+    {
+        UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+        [btn setTitle:@"设置" forState:UIControlStateNormal];
+        
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(settingButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+        _settingBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    }
+    
+    return _settingBarButtonItem;
 }
 
 #pragma mark - HttpRequest

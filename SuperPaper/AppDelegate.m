@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-#import "NavigationController.h"
 #import "../Common/SPGlobal.h"
 
 @interface AppDelegate ()

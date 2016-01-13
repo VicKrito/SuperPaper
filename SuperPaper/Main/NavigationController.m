@@ -33,13 +33,38 @@
     [navBar setBackgroundImage:[[UIImage imageWithColor:kSelColor] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forBarMetrics:UIBarMetricsDefault];
     
     navBar.backgroundColor = [UIColor clearColor];
+    [navBar setTintColor:[UIColor whiteColor]];
+    [navBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:22],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+
     
-    [navBar setTintColor:[UIColor clearColor]];
+    UIBarButtonItem *btnItem = [UIBarButtonItem appearance];
+    NSMutableDictionary * dictM = [NSMutableDictionary dictionary];
+    dictM[NSForegroundColorAttributeName] = [UIColor clearColor];
+    dictM[NSFontAttributeName] = [UIFont systemFontOfSize:0];
+
+    NSShadow * shadow = [[NSShadow alloc]init];
+    shadow.shadowOffset = CGSizeZero;
+    dictM[NSShadowAttributeName] = shadow;
+    [btnItem setTitleTextAttributes:dictM forState:UIControlStateNormal];
+
+    NSMutableDictionary * highdictM = [NSMutableDictionary dictionaryWithDictionary:dictM];
+    highdictM[NSForegroundColorAttributeName] = [UIColor clearColor];
+    [btnItem setTitleTextAttributes:highdictM forState:UIControlStateHighlighted];
     
-    [navBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:23],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    NSMutableDictionary * disableDictM = [NSMutableDictionary dictionary];
+    disableDictM[NSForegroundColorAttributeName] = [UIColor clearColor];
+    [btnItem setTitleTextAttributes:disableDictM forState:UIControlStateDisabled];
+    
 }
 
 
+
+- (void)back{
+    [self popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
