@@ -12,6 +12,7 @@
 #import "HomeNewsCell.h"
 #import "NormalWebViewController.h"
 #import "NormalStudyViewController.h"
+#import "PublicationViewController.h"
 
 /** 获取屏幕尺寸*/
 #define KAppWidth [UIScreen mainScreen].bounds.size.width
@@ -52,7 +53,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    _studyTableView.frame = CGRectMake(0, 0, KAppWidth,self.view.bounds.size.height);
+    _studyTableView.frame = CGRectMake(0, 0, KAppWidth,self.view.bounds.size.height - 30);
 
 }
 
@@ -164,7 +165,9 @@
 - (void)serviceBtnClick:(UIButton *)button{
     switch (button.tag) {
         case 0:{
-            
+            PublicationViewController *vc = [[PublicationViewController alloc] init];
+            vc.title = @"刊物";
+            [AppDelegate.app.nav pushViewController:vc animated:YES];
         }
             break;
         case 1:{

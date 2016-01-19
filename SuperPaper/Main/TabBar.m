@@ -34,11 +34,12 @@
     self = [super init];
     if (self) {
         self.userInteractionEnabled = YES;
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor whiteColor];
         self.clipsToBounds = YES;
         self.frame = CGRectMake(0, kHeight - kSizeH , kWidth, kSizeH);
         _lineView = [[UIView alloc] init];
-        _lineView.backgroundColor =  kLineColor;
+//        _lineView.backgroundColor =  kLineColor;
+        _lineView.backgroundColor = [UIColor lightGrayColor];
         [self addSubview:_lineView];
         // 老师 4个
         {

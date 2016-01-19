@@ -7,16 +7,25 @@
 //
 
 #import "AboutUsViewController.h"
+#import "AboutUsHasNextTableViewCell.h"
+#import "VersionTableViewCell.h"
 
-@interface AboutUsViewController ()
-
+@interface AboutUsViewController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    NSArray *_titles;
+}
 @end
 
+static NSString *const HasNextIdentifier = @"HasNext";
+static NSString *const VersionIdentifier = @"Version";
 @implementation AboutUsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _titles = @[@"服务条款",
+                @"关于我们"
+                ];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,6 +33,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+//MARK: TableViewDataSource,Delegate
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row < 2) {
+        AboutUsHasNextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HasNextIdentifier];
+        cell.titleLabel.text = _titles[indexPath.row];
+        return cell;
+    }else{
+        VersionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:VersionIdentifier];
+        return cell;
+    }
+}
 /*
 #pragma mark - Navigation
 
