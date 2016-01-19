@@ -170,6 +170,9 @@
     _tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [self loadNextPageData];
     }];
+    
+    _tableView.mj_header.backgroundColor = [UIColor colorWithRed:242.0 / 255.0 green:242.0 / 255.0 blue:242.0 / 255.0 alpha:1.0];
+    _tableView.mj_footer.backgroundColor = [UIColor colorWithRed:242.0 / 255.0 green:242.0 / 255.0 blue:242.0 / 255.0 alpha:1.0];
 }
 
 - (void)setupTitleView
@@ -245,9 +248,9 @@
 {
     GetPapersViewController *getPapersVC = [[GetPapersViewController alloc] init];
     getPapersVC.title = [[_paperArray objectAtIndex:indexPath.row] valueForKey:@"title"];
-    /**
-     * 跳转页面
-     */
+    getPapersVC.paperTitleStr = [[_paperArray objectAtIndex:indexPath.row] valueForKey:@"title"];
+    getPapersVC.dateStr = [[[[_paperArray objectAtIndex:indexPath.row] valueForKey:@"createdate"] componentsSeparatedByString:@" "] objectAtIndex:0];
+    getPapersVC.paperID = [[_paperArray objectAtIndex:indexPath.row] valueForKey:@"id"];
     [AppDelegate.app.nav pushViewController:getPapersVC animated:YES];
 }
 

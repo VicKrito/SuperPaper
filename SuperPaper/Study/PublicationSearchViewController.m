@@ -167,6 +167,9 @@
     _searchTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
             [self loadNextPageData];
     }];
+    
+    _searchTableView.mj_header.backgroundColor = [UIColor colorWithRed:242.0 / 255.0 green:242.0 / 255.0 blue:242.0 / 255.0 alpha:1.0];
+    _searchTableView.mj_footer.backgroundColor = [UIColor colorWithRed:242.0 / 255.0 green:242.0 / 255.0 blue:242.0 / 255.0 alpha:1.0];
 }
 
 #pragma mark - Actions

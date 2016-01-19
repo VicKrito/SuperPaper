@@ -56,7 +56,7 @@
 
 -(void)setInfoDict:(NSDictionary *)infoDict
 {
-    [_headImageView sd_setImageWithURL:infoDict[@"image"] placeholderImage:[UIImage imageNamed:@""]];
+    [_headImageView sd_setImageWithURL:infoDict[@"image"] placeholderImage:[UIImage imageWithASName:@"default_image" directory:@"common"]];
     _titleLabel.text = infoDict[@"title"];
     [_titleLabel sizeToFit];
     CGSize detailmaxSize = CGSizeMake(self.bounds.size.width - CGRectGetMaxX(_headImageView.frame) - LEFT_MARGIN * 2, 40);

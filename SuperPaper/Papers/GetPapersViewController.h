@@ -12,10 +12,14 @@
 /**
  *  论文标题
  */
-@property(nonatomic, strong) UILabel  * paperTitleLabel;
+@property(nonatomic, strong) NSString  * paperTitleStr;
 /**
  *  日期显示
  */
-@property(nonatomic, strong) UILabel  * dateLabel;
+@property(nonatomic, strong) NSString  * dateStr;
+/**
+ *  论文ID
+ */
+@property(nonatomic, strong) NSString  * paperID;
 
 @end
