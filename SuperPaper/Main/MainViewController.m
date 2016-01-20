@@ -14,15 +14,11 @@
 #import "StudyViewController.h"
 #import "UserViewController.h"
 #import "NavigationController.h"
-#import "TabBar.h"
 
 
 
 @interface MainViewController ()<TabBarDelegate>
-/**
- *  TabBar
- */
-@property (strong, nonatomic) TabBar *tabbar;
+
 /**
  *  首页
  */

@@ -200,7 +200,7 @@ static NSString *cellIdentifier = @"UserTableViewCell";
         if (kUserRoleStudent != [UserSession sharedInstance].currentRole) {
             [UserSession sharedInstance].currentRole = kUserRoleStudent;
             MainViewController *parentController = (MainViewController *)self.parentViewController;
-            [parentController changeTabBarDisplayType:MainTabBarDisplayTypeStudent];
+            parentController.tabbar.tabBarDisplayType = MainTabBarDisplayTypeStudent;
             [self.backTableView reloadData];
         }
         
@@ -208,7 +208,7 @@ static NSString *cellIdentifier = @"UserTableViewCell";
         if (kUserRoleTeacher != [UserSession sharedInstance].currentRole) {
             [UserSession sharedInstance].currentRole = kUserRoleTeacher;
             MainViewController *parentController = (MainViewController *)self.parentViewController;
-            [parentController changeTabBarDisplayType:MainTabBarDisplayTypeTeacher];
+            parentController.tabbar.tabBarDisplayType = MainTabBarDisplayTypeTeacher;
             [self.backTableView reloadData];
         }
     }

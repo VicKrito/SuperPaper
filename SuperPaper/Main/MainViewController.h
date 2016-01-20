@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "TabBar.h"
 
 
 typedef NS_ENUM(NSInteger , MainTabBarDisplayType) {
@@ -20,6 +21,10 @@ typedef NS_ENUM(NSInteger , MainTabBarDisplayType) {
  *
  */
 @interface MainViewController : BaseViewController
+/**
+ *  TabBar
+ */
+@property (strong, nonatomic) TabBar *tabbar;
 
 - (void)changeTabBarDisplayType:(MainTabBarDisplayType)type;
 
