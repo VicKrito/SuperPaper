@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>icon</key>
+		<string>icon_ass_book</string>
+		<key>title</key>
+		<string>刊物</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>出版社</string>
+		<key>icon</key>
+		<string>icon_ass_ publishing</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_ass_competion</string>
+		<key>title</key>
+		<string>比赛</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_ass_ knowledge</string>
+		<key>title</key>
+		<string>科研</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_ass_computer</string>
+		<key>title</key>
+		<string>计算机</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_ass_english</string>
+		<key>title</key>
+		<string>职称英语</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_ass_assintroduce</string>
+		<key>title</key>
+		<string>评职说明</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_ass_paperIntroduce</string>
+		<key>title</key>
+		<string>论文指导</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>icon_ass_ study</string>
+		<key>title</key>
+		<string>进修学习</string>
+	</dict>
+</array>
+</plist>

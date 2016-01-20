@@ -71,6 +71,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     cell.textLabel.text = [[_sortData objectAtIndex:indexPath.row] objectForKey:@"tagname"];
+    if (indexPath.row == 0) {
+        cell.textLabel.textColor = [UIColor purpleColor];
+    }
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     return cell;
 

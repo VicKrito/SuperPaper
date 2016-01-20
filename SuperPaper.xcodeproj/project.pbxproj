@@ -125,6 +125,7 @@
 		84C1396F1C4628DB00284087 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1395D1C4628DB00284087 /* UIImageView+HighlightedWebCache.m */; };
 		84C139701C4628DB00284087 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1395F1C4628DB00284087 /* UIImageView+WebCache.m */; };
 		84C139711C4628DB00284087 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C139611C4628DB00284087 /* UIView+WebCacheOperation.m */; };
+		92042A491C4F76A20057EAEA /* assessmment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92042A481C4F76A20057EAEA /* assessmment.plist */; };
 		9A5A30501C4E87DF00813FF9 /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5A304F1C4E87DF00813FF9 /* UserTableViewCell.m */; };
 		AAFA086A1C49294400FB0DA4 /* bg_mine_head_login.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFA08661C49294400FB0DA4 /* bg_mine_head_login.png */; };
 		AAFA086B1C49294400FB0DA4 /* bg_mine_head_notlogin.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFA08671C49294400FB0DA4 /* bg_mine_head_notlogin.png */; };
@@ -378,6 +379,7 @@
 		84C1395F1C4628DB00284087 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		84C139601C4628DB00284087 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		84C139611C4628DB00284087 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		92042A481C4F76A20057EAEA /* assessmment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = assessmment.plist; sourceTree = "<group>"; };
 		9A5A304E1C4E87DF00813FF9 /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserTableViewCell.h; path = User/UserTableViewCell.h; sourceTree = "<group>"; };
 		9A5A304F1C4E87DF00813FF9 /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTableViewCell.m; path = User/UserTableViewCell.m; sourceTree = "<group>"; };
 		AAFA08661C49294400FB0DA4 /* bg_mine_head_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_mine_head_login.png; sourceTree = "<group>"; };
@@ -657,6 +659,7 @@
 			children = (
 				04FFFE041C41207C00ECCA1C /* AssessmentTitleViewController.h */,
 				04FFFE051C41207C00ECCA1C /* AssessmentTitleViewController.m */,
+				92042A481C4F76A20057EAEA /* assessmment.plist */,
 			);
 			name = AssessmentTitle;
 			sourceTree = "<group>";
@@ -1132,6 +1135,7 @@
 				812021B61C478D7E000D05A4 /* Service.plist in Resources */,
 				F23480371C45FED400813AEC /* (null) in Resources */,
 				AAFA086A1C49294400FB0DA4 /* bg_mine_head_login.png in Resources */,
+				92042A491C4F76A20057EAEA /* assessmment.plist in Resources */,
 				844694381C48B889005619D7 /* usercell6.png in Resources */,
 				F4AA227B1C4E29C600906CF4 /* User.storyboard in Resources */,
 				5807C2ED1C473B7A002C5F8E /* MJRefresh.bundle in Resources */,
