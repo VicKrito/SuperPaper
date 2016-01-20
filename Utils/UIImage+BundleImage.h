@@ -14,4 +14,6 @@
 
 + (nullable UIImage *)imageWithASName:(nullable NSString *)nameStr directory:(nullable NSString *)dirStr bundle:(nullable NSString *)bundleName;
 
++ (nullable UIImage *)imageWithASName:(nullable NSString *)nameStr directory:(nullable NSString *)dirStr type:(nullable NSString *)typeStr;
+
 @end

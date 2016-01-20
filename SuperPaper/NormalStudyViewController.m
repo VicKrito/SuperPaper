@@ -8,7 +8,7 @@
 
 #import "NormalStudyViewController.h"
 #import "HomeNewsCell.h"
-
+#import "NormalWebViewController.h"
 
 #define KAppWidth [UIScreen mainScreen].bounds.size.width
 #define KAppHeight [UIScreen mainScreen].bounds.size.height
@@ -170,7 +170,22 @@
     
     cell.infoDict = dict;
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+        
+    NormalWebViewController *vc = [[NormalWebViewController alloc]init];
+    vc.title = [[_responseNewsInfoArr objectAtIndex:indexPath.row]valueForKey:@"title"];
+    vc.urlString = [[_responseNewsInfoArr objectAtIndex:indexPath.row]valueForKey:@"url"];
+        
+    /**
+    * 跳转页面
+    */
+    [AppDelegate.app.nav pushViewController:vc animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

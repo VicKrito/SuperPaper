@@ -39,14 +39,14 @@
     _headImageView.layer.cornerRadius  = 10;
     [self.contentView addSubview:_headImageView];
     
-    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_headImageView.frame) + LEFT_MARGIN,LEFT_MARGIN, self.bounds.size.width - CGRectGetMaxX(_headImageView.frame) - LEFT_MARGIN * 2, 40)];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_headImageView.frame) + LEFT_MARGIN,LEFT_MARGIN, OWIDTH - CGRectGetMaxX(_headImageView.frame) - LEFT_MARGIN * 2, 40)];
     _titleLabel.font = [UIFont systemFontOfSize:15.0];
     _titleLabel.backgroundColor = [UIColor clearColor];
     _titleLabel.numberOfLines = 2;
     _titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     [self.contentView addSubview:_titleLabel];
     
-    _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_headImageView.frame),70- LEFT_MARGIN-20, self.bounds.size.width - CGRectGetMaxX(_headImageView.frame) - LEFT_MARGIN , 20)];
+    _timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_headImageView.frame),70- LEFT_MARGIN-20, OWIDTH - CGRectGetMaxX(_headImageView.frame) - LEFT_MARGIN , 20)];
     _timeLabel.font = [UIFont systemFontOfSize:14.0];
     _timeLabel.textColor = [UIColor grayColor];
     _timeLabel.backgroundColor = [UIColor clearColor];
@@ -59,7 +59,7 @@
     [_headImageView sd_setImageWithURL:infoDict[@"image"] placeholderImage:[UIImage imageWithASName:@"default_image" directory:@"common"]];
     _titleLabel.text = infoDict[@"title"];
     [_titleLabel sizeToFit];
-    CGSize detailmaxSize = CGSizeMake(self.bounds.size.width - CGRectGetMaxX(_headImageView.frame) - LEFT_MARGIN * 2, 40);
+    CGSize detailmaxSize = CGSizeMake(OWIDTH - CGRectGetMaxX(_headImageView.frame) - LEFT_MARGIN * 2, 40);
     CGSize detailSize = [_titleLabel sizeThatFits:detailmaxSize];
     _titleLabel.frame = CGRectMake(CGRectGetMaxX(_headImageView.frame) + LEFT_MARGIN,LEFT_MARGIN , detailSize.width, detailSize.height);
     _timeLabel.text = infoDict[@"time"];
