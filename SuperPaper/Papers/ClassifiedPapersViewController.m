@@ -230,6 +230,7 @@
     cell.titltLabel.text = [[_paperArray objectAtIndex:indexPath.row] valueForKey:@"title"];
     cell.detailLabel.text = [[_paperArray objectAtIndex:indexPath.row] valueForKey:@"description"];
     cell.dateLabel.text = [[[[_paperArray objectAtIndex:indexPath.row] valueForKey:@"createdate"] componentsSeparatedByString:@" "] objectAtIndex:0];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }

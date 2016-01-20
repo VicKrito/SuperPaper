@@ -205,6 +205,7 @@
     NSString *urlString = [NSString stringWithFormat:@"%@%@",IMGURL,[[_responseArr objectAtIndex:indexPath.row] valueForKey:@"listitem_pic_name"]];
     [cell.iconImg sd_setImageWithURL:[NSURL URLWithString:urlString]];
     cell.titleLabel.text = [[_responseArr objectAtIndex:indexPath.row] valueForKey:@"title"];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
