@@ -66,12 +66,6 @@
     
     /// 搜索table
     UITableView *_searchTableView;
-    
-    /// 下拉加载header
-    MJRefreshNormalHeader *header;
-    
-    /// 上拉刷新footer
-    MJRefreshAutoNormalFooter *footer;
 }
 
 - (void)viewDidLoad {
@@ -182,6 +176,7 @@
     _searchTableView.showsVerticalScrollIndicator = NO;
     _searchTableView.delegate = self;
     _searchTableView.dataSource = self;
+    _searchTableView.backgroundColor = [UIColor colorWithRed:242.0 / 255.0 green:242.0 / 255.0 blue:242.0 / 255.0 alpha:1.0];
     _searchTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:_searchTableView];
     

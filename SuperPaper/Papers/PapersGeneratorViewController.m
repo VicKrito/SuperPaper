@@ -11,7 +11,7 @@
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 
-@interface PapersGeneratorViewController ()
+@interface PapersGeneratorViewController ()<UITextFieldDelegate>
 
 @end
 
@@ -77,6 +77,7 @@
     _searchBar.layer.cornerRadius = 5;
     _searchBar.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     _searchBar.placeholder = @"请输入论文题目";
+    _searchBar.delegate = self;
     _searchBar.clearButtonMode = UITextFieldViewModeAlways;
     [searchBarImg addSubview:_searchBar];
     
@@ -163,6 +164,7 @@
     textView.text = _content;
     textView.textColor = [UIColor blackColor];
     textView.font = [UIFont systemFontOfSize:17.0];
+    textView.returnKeyType = UIReturnKeyDone;
     [textView setEditable:NO];
     [_paperScrollerView addSubview:textView];
 }
@@ -223,6 +225,13 @@
        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
            NSLog(@"%@",error);
        }];
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [_searchBar resignFirstResponder];
+    return YES;
 }
 
 @end

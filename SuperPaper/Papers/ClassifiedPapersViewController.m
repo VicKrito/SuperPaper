@@ -65,12 +65,6 @@
     NSString *_bundleStr;
 
     NSString *tagId;
-
-    /// 下拉加载header
-    MJRefreshNormalHeader *header;
-    
-    /// 上拉刷新footer
-    MJRefreshAutoNormalFooter *footer;
 }
 
 - (void)viewDidLoad {
@@ -159,6 +153,7 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    _tableView.backgroundColor = [UIColor colorWithRed:242.0 / 255.0 green:242.0 / 255.0 blue:242.0 / 255.0 alpha:1.0];
     [self.view addSubview:_tableView];
     
     // 下拉刷新

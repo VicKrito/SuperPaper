@@ -8,6 +8,8 @@
 
 #import "UserViewController.h"
 #import "MainViewController.h"
+#import "UserSession.h"
+#import "UserTableViewCell.h"
 typedef enum{
     
     UserHeaderTypeLogin,
@@ -17,7 +19,10 @@ typedef enum{
 }UserHeaderType;
 
 
-@interface UserViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface UserViewController () <UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate>
+{
+    NSArray *_titles;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *backTableView;
 @property (nonatomic ,strong) UIView *loginHeaderView;
@@ -31,10 +36,22 @@ typedef enum{
 
 @end
 
+static NSString *cellIdentifier = @"UserTableViewCell";
 @implementation UserViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _titles = @[@"我的消息",
+                @"个人信息",
+                @"我的账户",
+                @"我的邀请",
+                @"职业选择",
+                @"我的论文",
+                @"关于我们",
+                @"意见反馈",
+                @"客服电话"
+                ];
+    
     [self setupLoginHeaderView];
     [self setupUserHeaderView];
     
@@ -170,6 +187,32 @@ typedef enum{
     
 }
 
+- (void)popupDisplayTypeChoosingActionSheet
+{
+    UIActionSheet *sheet = [[UIActionSheet alloc]initWithTitle:@"请选择职业" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"学生" otherButtonTitles:@"教师", nil];
+    [sheet showInView:self.view];
+}
+
+//MARK: UIActionSheet Delegate
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (0 == buttonIndex) {
+        if (kUserRoleStudent != [UserSession sharedInstance].currentRole) {
+            [UserSession sharedInstance].currentRole = kUserRoleStudent;
+            MainViewController *parentController = (MainViewController *)self.parentViewController;
+            [parentController changeTabBarDisplayType:MainTabBarDisplayTypeStudent];
+            [self.backTableView reloadData];
+        }
+        
+    }else if(1 == buttonIndex){
+        if (kUserRoleTeacher != [UserSession sharedInstance].currentRole) {
+            [UserSession sharedInstance].currentRole = kUserRoleTeacher;
+            MainViewController *parentController = (MainViewController *)self.parentViewController;
+            [parentController changeTabBarDisplayType:MainTabBarDisplayTypeTeacher];
+            [self.backTableView reloadData];
+        }
+    }
+}
 //MARK: TabelViewDataSource,Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -191,33 +234,27 @@ typedef enum{
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell * cell = nil;
+    UserTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (indexPath.section == 0)
     {
-        cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"userReuse%ld",indexPath.row ]];
-        if (indexPath.row == 4)
-        {
-            self.displayTypeLabel = [cell viewWithTag:178802];
-        }else if (indexPath.row == 5)
-        {
-            self.paperNumLabel = [cell viewWithTag:178803];
-        }
+        cell.titleLabel.text = _titles[indexPath.row];
+        cell.headImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"usercell%lu",indexPath.row + 1]];
+        if (4 == indexPath.row) {
+            cell.contentLabel.text = (kUserRoleStudent == [UserSession sharedInstance].currentRole)?@"学生":@"教师";
+        }else if(5 == indexPath.row){
+            cell.contentLabel.text = @"40";
+        }else
+            cell.contentLabel.text = @"";
+
     }else if (indexPath.section == 1)
     {
-        cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"userCell%ld",indexPath.row ]];
-        if (indexPath.row == 2)
-        {
-            self.telephoneNumLabel = [cell viewWithTag:178804];
-        }
+        cell.titleLabel.text = _titles[indexPath.row + 6];
+        cell.headImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"usercell%lu",indexPath.row + 7]];
+        if (2 == indexPath.row) {
+            cell.contentLabel.text = @"0411-88160257";
+        }else cell.contentLabel.text = @"";
     }
-    
-    if (cell == nil)
-    {
-        NSLog(@"indexpathsection %ld  indexpath.row = %ld",indexPath.section , indexPath.row);
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@""];
-    }
-
     
     return cell;
 }
@@ -262,6 +299,9 @@ typedef enum{
                 break;
             case 3:
                 colorString = @"pink";  // 我的邀请
+                break;
+            case 4:
+                [self popupDisplayTypeChoosingActionSheet];
                 break;
             case 5:
                 colorString = @"gray";  // 我的论文

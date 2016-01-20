@@ -125,6 +125,7 @@
 		84C1396F1C4628DB00284087 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1395D1C4628DB00284087 /* UIImageView+HighlightedWebCache.m */; };
 		84C139701C4628DB00284087 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1395F1C4628DB00284087 /* UIImageView+WebCache.m */; };
 		84C139711C4628DB00284087 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C139611C4628DB00284087 /* UIView+WebCacheOperation.m */; };
+		9A5A30501C4E87DF00813FF9 /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5A304F1C4E87DF00813FF9 /* UserTableViewCell.m */; };
 		AAFA086A1C49294400FB0DA4 /* bg_mine_head_login.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFA08661C49294400FB0DA4 /* bg_mine_head_login.png */; };
 		AAFA086B1C49294400FB0DA4 /* bg_mine_head_notlogin.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFA08671C49294400FB0DA4 /* bg_mine_head_notlogin.png */; };
 		AAFA086C1C49294400FB0DA4 /* user_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = AAFA08681C49294400FB0DA4 /* user_camera.png */; };
@@ -377,6 +378,8 @@
 		84C1395F1C4628DB00284087 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		84C139601C4628DB00284087 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		84C139611C4628DB00284087 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		9A5A304E1C4E87DF00813FF9 /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserTableViewCell.h; path = User/UserTableViewCell.h; sourceTree = "<group>"; };
+		9A5A304F1C4E87DF00813FF9 /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTableViewCell.m; path = User/UserTableViewCell.m; sourceTree = "<group>"; };
 		AAFA08661C49294400FB0DA4 /* bg_mine_head_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_mine_head_login.png; sourceTree = "<group>"; };
 		AAFA08671C49294400FB0DA4 /* bg_mine_head_notlogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_mine_head_notlogin.png; sourceTree = "<group>"; };
 		AAFA08681C49294400FB0DA4 /* user_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_camera.png; sourceTree = "<group>"; };
@@ -599,6 +602,8 @@
 				F4AA227A1C4E29C600906CF4 /* User.storyboard */,
 				04FFFDFD1C410C2900ECCA1C /* UserViewController.h */,
 				04FFFDFE1C410C2900ECCA1C /* UserViewController.m */,
+				9A5A304E1C4E87DF00813FF9 /* UserTableViewCell.h */,
+				9A5A304F1C4E87DF00813FF9 /* UserTableViewCell.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -1238,6 +1243,7 @@
 				0401D4E01C4237AC002E2F12 /* RegisterViewController.m in Sources */,
 				04FFFE0A1C4122E200ECCA1C /* UserSession.m in Sources */,
 				5807C2F01C473B7A002C5F8E /* UIScrollView+MJRefresh.m in Sources */,
+				9A5A30501C4E87DF00813FF9 /* UserTableViewCell.m in Sources */,
 				84C139341C4628A800284087 /* AFImageDownloader.m in Sources */,
 				04FFFDCE1C40F63D00ECCA1C /* main.m in Sources */,
 				5807C2E21C473B7A002C5F8E /* MJRefreshFooter.m in Sources */,
