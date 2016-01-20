@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+/*
+ *
+ * @brief 通用颜色以及字体
+ */
+
 @interface AppConfig : NSObject
 
-
+#define NAVIGATIONBAR_HEIGHT 64
+#define TABBAR_HEIGHT 49
 + (UIColor *)appNaviColor;
 
 @end

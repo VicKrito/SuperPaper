@@ -22,10 +22,10 @@
     if (!_arrayOfImageSource) {
         _arrayOfImageSource = [[NSMutableArray alloc]init];
         
-        UIImage *image1 =[UIImage imageNamed:@"guide_1.jpg"];
-        UIImage *image2 =[UIImage imageNamed:@"guide_2.jpg"];
-        UIImage *image3 =[UIImage imageNamed:@"guide_3.jpg"];
-        UIImage *image4 =[UIImage imageNamed:@"guide_4.jpg"];
+        UIImage *image1 =[UIImage imageWithASName:@"g1" directory:@"introducepage" type:@"jpg"];
+        UIImage *image2 =[UIImage imageWithASName:@"g2" directory:@"introducepage" type:@"jpg"];
+        UIImage *image3 =[UIImage imageWithASName:@"g3" directory:@"introducepage" type:@"jpg"];
+//        UIImage *image4 =[UIImage imageNamed:@"guide_4.jpg"];
         if (image1) {
             [_arrayOfImageSource addObject:image1];
         }
@@ -35,9 +35,9 @@
         if (image3) {
             [_arrayOfImageSource addObject:image3];
         }
-        if (image4) {
-            [_arrayOfImageSource addObject:image4];
-        }
+//        if (image4) {
+//            [_arrayOfImageSource addObject:image4];
+//        }
 
     }
     return _arrayOfImageSource;
@@ -66,8 +66,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
-    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBarHidden = YES;
     self.view.frame =CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     [self setupScrollView];
     [self.view addSubview:self.scrollView];
@@ -77,9 +78,11 @@
 -(void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
-    [self.navigationItem setHidesBackButton:YES];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-    [self testUserSession];
+    self.navigationController.navigationBarHidden = YES;
+
+//    [self.navigationItem setHidesBackButton:YES];
+//    [self.navigationController setNavigationBarHidden:YES animated:animated];
+//    [self testUserSession];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -100,8 +103,10 @@
             self.teacherButton = [[UIButton alloc]initWithFrame:CGRectMake(size.width*(index + 1) - 320, SCREEN_HEIGHT - 200, 320, 60)];
             [self.teacherButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
             [self.teacherButton setTitle:@"我是老师" forState:UIControlStateNormal];
+            self.teacherButton.tag = 1111;
             
             self.studentButton = [[UIButton alloc]initWithFrame:CGRectMake(size.width*(index + 1) - 320, SCREEN_HEIGHT - 150, 320, 60)];
+            self.teacherButton.tag = 1112;
             [self.studentButton setTitle:@"我是学生" forState:UIControlStateNormal];
             [self.studentButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
 
@@ -121,6 +126,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc
+{
+    self.navigationController.navigationBarHidden = NO;
+}
+
 /*
 #pragma mark - Navigation
 
@@ -131,14 +141,14 @@
 }
 */
 
-- (void)testUserSession {
-    UserRole role = [[UserSession sharedInstance] currentRole];
-    NSLog(@"----> CurrentUserRole:%ld",role);
-    if (role == kUserRoleStudent) {
-        [[UserSession sharedInstance] setCurrentRole:kUserRoleTeacher];
-    } else if (role == kUserRoleTeacher) {
-        [[UserSession sharedInstance] setCurrentRole:kUserRoleStudent];
-    }
-}
+//- (void)testUserSession {
+//    UserRole role = [[UserSession sharedInstance] currentRole];
+//    NSLog(@"----> CurrentUserRole:%ld",role);
+//    if (role == kUserRoleStudent) {
+//        [[UserSession sharedInstance] setCurrentRole:kUserRoleTeacher];
+//    } else if (role == kUserRoleTeacher) {
+//        [[UserSession sharedInstance] setCurrentRole:kUserRoleStudent];
+//    }
+//}
 
 @end

@@ -14,6 +14,8 @@
 #import "StudyViewController.h"
 #import "UserViewController.h"
 #import "NavigationController.h"
+#import "TabBar.h"
+#import "IntroViewController.h"
 
 
 
@@ -47,6 +49,10 @@
  *  当前视图
  */
 @property (strong, nonatomic) BaseViewController *currentController;
+/**
+ *  广告
+ */
+@property (nonatomic,strong) IntroViewController *introPageView;
 
 /**
  *  当前页面索引
@@ -91,6 +97,25 @@
     self.currentController = self.homeController;
     
     self.navigationItem.rightBarButtonItem = self.normalBarButtonItem;
+    
+    NSString *versionStr = @"CFBundleShortVersionString";
+    NSString *currentVersionStr = [[[NSBundle mainBundle] infoDictionary] objectForKey:versionStr];
+    NSString *oldVersionStr = [[NSUserDefaults standardUserDefaults] objectForKey:versionStr];
+    if (![currentVersionStr isEqualToString:oldVersionStr])
+    {
+        self.tabbar.hidden = YES;
+        IntroViewController *introPageView = [[IntroViewController alloc]init];
+
+        [self addChildViewController:introPageView];
+        [self.view addSubview:introPageView.view];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:currentVersionStr forKey:versionStr];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        self.introPageView = introPageView;
+        [introPageView.studentButton addTarget:self action:@selector(removeScrollViewButton:) forControlEvents:UIControlEventTouchUpInside];
+        [introPageView.teacherButton addTarget:self action:@selector(removeScrollViewButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self performSelector:@selector(removeIntroPageView:) withObject:introPageView afterDelay:5];
+    }
 }
 
 - (void)userAction:(UIButton *)button
@@ -193,15 +218,51 @@
 }
 
 
-
-
-
-
 #pragma mark -  event response
 - (void)settingButtonAction:(UIBarButtonItem *)button
 {
     NSLog(@"%s 设置按钮",__FUNCTION__);
 }
+
+- (void)removeIntroPageView:(IntroViewController *)introPageView
+{
+    if (introPageView)
+    {
+        // 默认选择预留
+        
+    }
+    if (!self.introPageView) return;
+    [UIView animateWithDuration:0.3 animations:^{
+        self.introPageView.view.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        self.tabbar.hidden = NO;
+        self.navigationController.navigationBarHidden = NO;
+        [self.introPageView.view removeFromSuperview];
+        [self.introPageView removeFromParentViewController];
+        self.introPageView = nil;
+    }];
+    
+}
+
+- (void)removeScrollViewButton:(UIButton *)button
+{
+    switch (button.tag) {
+        case 1111:
+            self.tabbar.tabBarDisplayType = TabBarDisplayTypeStudent;
+            [self removeIntroPageView:nil];
+            break;
+        case 1112:
+            self.tabbar.tabBarDisplayType = TabBarDisplayTypeTeacher;
+            [self removeIntroPageView:nil];
+
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
 
 #pragma mark -  lazying - getter and setter
 

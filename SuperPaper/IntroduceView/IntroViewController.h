@@ -12,4 +12,5 @@
 
 @property (nonatomic,strong)UIButton *studentButton;
 @property (nonatomic,strong)UIButton *teacherButton;
+
 @end
