@@ -149,6 +149,8 @@
 		F4AA22781C4E29B800906CF4 /* MyMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AA22751C4E29B800906CF4 /* MyMessageTableViewCell.m */; };
 		F4AA22791C4E29B800906CF4 /* MyMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AA22771C4E29B800906CF4 /* MyMessageViewController.m */; };
 		F4AA227B1C4E29C600906CF4 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4AA227A1C4E29C600906CF4 /* User.storyboard */; };
+		F65E83211C4F358C00CE31D2 /* JobService.plist in Resources */ = {isa = PBXBuildFile; fileRef = F65E83201C4F358C00CE31D2 /* JobService.plist */; };
+		F65E83241C4F394600CE31D2 /* NormalJobViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65E83231C4F394600CE31D2 /* NormalJobViewController.m */; };
 		F6B69EFF1C462E0500CBFEB3 /* PublicationSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B69EFC1C462E0500CBFEB3 /* PublicationSearchTableViewCell.m */; };
 		F6B69F001C462E0500CBFEB3 /* PublicationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B69EFE1C462E0500CBFEB3 /* PublicationSearchViewController.m */; };
 		F6F21CB81C48B8D000AD6A6D /* ClassifiedPapersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6F21CB71C48B8D000AD6A6D /* ClassifiedPapersViewController.m */; };
@@ -417,6 +419,9 @@
 		F4AA22761C4E29B800906CF4 /* MyMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyMessageViewController.h; path = User/MyMessageViewController.h; sourceTree = "<group>"; };
 		F4AA22771C4E29B800906CF4 /* MyMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyMessageViewController.m; path = User/MyMessageViewController.m; sourceTree = "<group>"; };
 		F4AA227A1C4E29C600906CF4 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = User.storyboard; path = User/User.storyboard; sourceTree = "<group>"; };
+		F65E83201C4F358C00CE31D2 /* JobService.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = JobService.plist; sourceTree = "<group>"; };
+		F65E83221C4F394600CE31D2 /* NormalJobViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NormalJobViewController.h; path = Jobs/NormalJobViewController.h; sourceTree = "<group>"; };
+		F65E83231C4F394600CE31D2 /* NormalJobViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NormalJobViewController.m; path = Jobs/NormalJobViewController.m; sourceTree = "<group>"; };
 		F6B69EFB1C462E0500CBFEB3 /* PublicationSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PublicationSearchTableViewCell.h; path = Study/PublicationSearchTableViewCell.h; sourceTree = "<group>"; };
 		F6B69EFC1C462E0500CBFEB3 /* PublicationSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PublicationSearchTableViewCell.m; path = Study/PublicationSearchTableViewCell.m; sourceTree = "<group>"; };
 		F6B69EFD1C462E0500CBFEB3 /* PublicationSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PublicationSearchViewController.h; path = Study/PublicationSearchViewController.h; sourceTree = "<group>"; };
@@ -568,6 +573,9 @@
 			children = (
 				04FFFE011C41205900ECCA1C /* JobsViewController.h */,
 				04FFFE021C41205900ECCA1C /* JobsViewController.m */,
+				F65E83201C4F358C00CE31D2 /* JobService.plist */,
+				F65E83221C4F394600CE31D2 /* NormalJobViewController.h */,
+				F65E83231C4F394600CE31D2 /* NormalJobViewController.m */,
 			);
 			name = Jobs;
 			sourceTree = "<group>";
@@ -1135,7 +1143,11 @@
 				812021B61C478D7E000D05A4 /* Service.plist in Resources */,
 				F23480371C45FED400813AEC /* (null) in Resources */,
 				AAFA086A1C49294400FB0DA4 /* bg_mine_head_login.png in Resources */,
+<<<<<<< HEAD
 				92042A491C4F76A20057EAEA /* assessmment.plist in Resources */,
+=======
+				F65E83211C4F358C00CE31D2 /* JobService.plist in Resources */,
+>>>>>>> AppSudio/master
 				844694381C48B889005619D7 /* usercell6.png in Resources */,
 				F4AA227B1C4E29C600906CF4 /* User.storyboard in Resources */,
 				5807C2ED1C473B7A002C5F8E /* MJRefresh.bundle in Resources */,
@@ -1267,6 +1279,7 @@
 				04FFFE061C41207C00ECCA1C /* AssessmentTitleViewController.m in Sources */,
 				04FFFE161C4123F100ECCA1C /* MainViewController.m in Sources */,
 				04FFFE171C4123F100ECCA1C /* NavigationController.m in Sources */,
+				F65E83241C4F394600CE31D2 /* NormalJobViewController.m in Sources */,
 				84C139621C4628DB00284087 /* MKAnnotationView+WebCache.m in Sources */,
 				84C1391A1C4628A300284087 /* AFSecurityPolicy.m in Sources */,
 				84C139681C4628DB00284087 /* SDWebImageDownloaderOperation.m in Sources */,

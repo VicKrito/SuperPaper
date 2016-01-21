@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>icon</key>
+		<string>CivilServant</string>
+		<key>title</key>
+		<string>公务员</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>Government-affiliatedInstitutions</string>
+		<key>title</key>
+		<string>事业单位</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>StateOwnedEnterprises</string>
+		<key>title</key>
+		<string>国企单位</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>ForeignEnterprise</string>
+		<key>title</key>
+		<string>外企</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>PrivatelyOperated</string>
+		<key>title</key>
+		<string>民营</string>
+	</dict>
+	<dict>
+		<key>icon</key>
+		<string>Part-timeJob</string>
+		<key>title</key>
+		<string>兼职</string>
+	</dict>
+</array>
+</plist>
