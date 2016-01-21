@@ -15,6 +15,7 @@
 #import <MessageUI/MessageUI.h>
 #import <MapKit/MapKit.h>
 #import "HomeActivityCell.h"
+#import "UserSession.h"
 
 @interface PapersViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -48,7 +49,7 @@
 #pragma mark - 获取数据
 - (void)getData
 {
-    NSMutableDictionary *paramDic = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:2],@"ownertype",nil];
+    NSMutableDictionary *paramDic = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:[UserSession sharedInstance].currentRole],@"ownertype",nil];
     NSLog(@"%@",paramDic);
     NSString *urlString =  [NSString stringWithFormat:@"%@paper_type.php",BASE_URL];
     NSLog(@"%@",urlString);

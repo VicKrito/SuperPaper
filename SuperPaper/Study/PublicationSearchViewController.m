@@ -8,6 +8,7 @@
 
 #import "PublicationSearchViewController.h"
 #import "PublicationSearchTableViewCell.h"
+#import "UserSession.h"
 
 #define SEARCHPAGESIZE 30
 
@@ -52,7 +53,7 @@
      * list_num   整型    一次获取list数
      * group_id   整型    ownertype为1时  1：刊物  其他不明确
      */
-    NSDictionary *parameters = @{@"ownertype":[NSNumber numberWithInt:1], @"keywords":_searchBar.text, @"start_pos":[NSNumber numberWithInt:(int)_responseArr.count], @"list_num":[NSNumber numberWithInt:SEARCHPAGESIZE], @"group_id":[NSNumber numberWithInt:1]};
+    NSDictionary *parameters = @{@"ownertype":[NSNumber numberWithInt:[UserSession sharedInstance].currentRole], @"keywords":_searchBar.text, @"start_pos":[NSNumber numberWithInt:(int)_responseArr.count], @"list_num":[NSNumber numberWithInt:SEARCHPAGESIZE], @"group_id":[NSNumber numberWithInt:1]};
     NSString *urlString = [NSString stringWithFormat:@"%@confer_searchnews.php",BASE_URL];
     NSLog(@"%@",urlString);
     [manager POST:urlString parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
