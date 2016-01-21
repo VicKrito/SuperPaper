@@ -11,7 +11,7 @@
 #import "SDCycleScrollView.h"
 #import "HomeNewsCell.h"
 #import "NormalWebViewController.h"
-#import "NormalAssessmentViewController.h"
+#import "NormalStudyViewController.h"
 #import "PublicationViewController.h"
 
 @interface AssessmentTitleViewController ()<UITableViewDataSource,UITableViewDelegate,SDCycleScrollViewDelegate>
@@ -161,63 +161,54 @@
         case 0:{
             PublicationViewController *vc = [[PublicationViewController alloc] init];
             vc.title = @"刊物";
-        
             [AppDelegate.app.nav pushViewController:vc animated:YES];
         }
             break;
         case 1:{
-            NormalAssessmentViewController *vc = [[NormalAssessmentViewController alloc] init];
-            vc.title = @"出版社";
-            vc.group_id = button.tag+1;
+            NormalStudyViewController *vc = [[NormalStudyViewController alloc] init];
+            vc.title = @"考研";
             [AppDelegate.app.nav pushViewController:vc animated:YES];
         }
             break;
         case 2:{
-            NormalAssessmentViewController *vc = [[NormalAssessmentViewController alloc] init];
-            vc.title = @"比赛";
-            vc.group_id = button.tag+1;
+            NormalStudyViewController *vc = [[NormalStudyViewController alloc] init];
+            vc.title = @"留学";
             [AppDelegate.app.nav pushViewController:vc animated:YES];
         }
             break;
         case 3:{
-            NormalAssessmentViewController *vc = [[NormalAssessmentViewController alloc] init];
-            vc.title = @"科研";
-            vc.group_id = button.tag+1;
+            NormalStudyViewController *vc = [[NormalStudyViewController alloc] init];
+            vc.title = @"比赛";
             [AppDelegate.app.nav pushViewController:vc animated:YES];
         }
             break;
         case 4:{
-            NormalAssessmentViewController *vc = [[NormalAssessmentViewController alloc] init];
-            vc.title = @"计算机";
-            vc.group_id = button.tag+1;
+            NormalStudyViewController *vc = [[NormalStudyViewController alloc] init];
+            vc.title = @"考证";
             [AppDelegate.app.nav pushViewController:vc animated:YES];
         }
             break;
         case 5:{
-            NormalAssessmentViewController *vc = [[NormalAssessmentViewController alloc] init];
-            vc.title = @"职称英语";
-            vc.group_id = button.tag+1;
+            NormalStudyViewController *vc = [[NormalStudyViewController alloc] init];
+            vc.title = @"计算机";
             [AppDelegate.app.nav pushViewController:vc animated:YES];
         }
             break;
         case 6:{
-            NormalAssessmentViewController *vc = [[NormalAssessmentViewController alloc] init];
-            vc.title = @"评职说明";
-            vc.group_id = button.tag+1;
+            NormalStudyViewController *vc = [[NormalStudyViewController alloc] init];
+            vc.title = @"大学46级";
             [AppDelegate.app.nav pushViewController:vc animated:YES];
         }
             break;
         case 7:{
-            NormalAssessmentViewController *vc = [[NormalAssessmentViewController alloc] init];
+            NormalStudyViewController *vc = [[NormalStudyViewController alloc] init];
             vc.title = @"论文指导";
-            vc.group_id = button.tag+1;
             [AppDelegate.app.nav pushViewController:vc animated:YES];
         }
             break;
         case 8:{
-            NormalAssessmentViewController *vc = [[NormalAssessmentViewController alloc] init];
-            vc.title = @"进修学习";
-            vc.group_id = button.tag+1;
+            NormalStudyViewController *vc = [[NormalStudyViewController alloc] init];
+            vc.title = @"作业指导";
             [AppDelegate.app.nav pushViewController:vc animated:YES];
         }
             break;
